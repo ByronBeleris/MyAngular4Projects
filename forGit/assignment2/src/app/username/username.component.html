@@ -1,8 +1,15 @@
-<label>Enter username</label>
-<input
-  type="text"
-  class="form-control"
-  [(ngModel)]="usernameText"
-  (input)="activeButton()">
-  <p>{{ usernameText }}</p>
-  <button type="button" name="button" class="btn btn-primary" [disabled]="!allowNewUsername" (click)="onClearUsername()">Clear Username</button>
+<div class="myClass">
+    <label >Enter username</label>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="usernameText"
+      (input)="activeButton()">
+    <!--  <p>{{ usernameText }}</p>-->
+      <button type="button" id="myButton" name="button" class="btn btn-primary" [disabled]="!allowNewUsername" (click)="onAddUsername()">Add Username</button>
+      <button type="button" id="myButton" name="button" class="btn btn-primary" [disabled]="!toggle" (click)="onClearUsernameList()">Clear Usernames</button>
+      <div
+         class="myClass"
+        *ngFor="let name of namesList">{{ name }}   
+    </div>
+</div>
