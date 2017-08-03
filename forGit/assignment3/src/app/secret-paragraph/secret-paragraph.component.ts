@@ -9,7 +9,6 @@ export class SecretParagraphComponent implements OnInit {
   displayMessage = false;
   clicksHit = [];
   count = 0;
-  numberOfClicks = false;
   constructor() { }
 
   ngOnInit() {
@@ -21,13 +20,8 @@ export class SecretParagraphComponent implements OnInit {
       this.displayMessage = false;
     }
     this.count++
-    this.clicksHit.push(this.count.toString());
-    if (this.count >= 5){
-      this.numberOfClicks=true;
-    }
-
-  }
-  getColor(){
-    return this.numberOfClicks === true ? 'green' : null;
+//    this.clicksHit.push(this.count.toString());
+      this.clicksHit.push(new Date());
+   
   }
 }
