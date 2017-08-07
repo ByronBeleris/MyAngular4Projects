@@ -1,0 +1,15 @@
+<div class="container">
+    <h1>Numbers Game</h1>
+    <div class="row">
+        <div class="col-sm-12">
+            <app-game-control (intervalStart)="onIntervalStart($event)"></app-game-control>
+        </div>
+        <div>
+            <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
+        </div>
+        <div>
+            <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
+        </div>
+
+    </div>
+</div>
