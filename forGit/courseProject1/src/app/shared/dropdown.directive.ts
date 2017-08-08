@@ -11,7 +11,7 @@ export class DropdownDirective {
     }
 }
 
-// Now you can use this directive, after you pass it in app.module.ts, in .html
+// Now you can use this Dropdown directive, after you pass it in app.module.ts, in .html
 
 // IN RECIPE DETAIL html
 
