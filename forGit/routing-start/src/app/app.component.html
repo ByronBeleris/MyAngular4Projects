@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <ul class="nav nav-tabs">
+                <li class="nav-item" role="presentation" class="active"><a routerLink="/" class="nav-link">Home</a></li>
+                <li class="nav-item" role="presentation"><a routerLink="/servers" class="nav-link">Servers</a></li>
+                <li class="nav-item" role="presentation"><a [routerLink]="['/users']" class="nav-link">Users</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <router-outlet> </router-outlet>
+        </div>
+    </div>
+</div>
