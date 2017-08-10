@@ -4,25 +4,25 @@
     <span class="navbar-toggler-icon" ></span>
   </button>
     </div>
-    <a class="navbar-brand" href="#">Recipe Book</a>
+    <a class="navbar-brand" style="cursor:pointer;">Recipe Book</a>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent" [collapse]="!isCollapsed">.
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="#" (click)="onSelect('recipe')">Recipes <span class="sr-only">(current)</span></a>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/recipes">Recipes <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" (click)="onSelect('shopping-list')">Shopping List</a>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/shopping-list">Shopping List</a>
             </li>
             <li class="nav-item">
                 <div ngbDropdown>
-                    <a class="nav-link" href="#" ngbDropdownToggle>Manage</a>
+                    <a class="nav-link" style="cursor:pointer;" ngbDropdownToggle>Manage</a>
                     <div class="dropdown-menu myBoxSize">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Save Data</a>
+                            <a class="nav-link" style="cursor:pointer;">Save Data</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Fetch Data</a>
+                            <a class="nav-link" style="cursor:pointer;">Fetch Data</a>
                         </li>
                     </div>
                 </div>
