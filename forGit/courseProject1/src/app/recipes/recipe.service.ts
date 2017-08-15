@@ -10,21 +10,29 @@ export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
 
   private recipes: Recipe[] = [
-    new Recipe('Pizza', 'Best pizza ever', 'https://upload.wikimedia.org/wikipedia/commons/0/07/Pizza_%2822%29.jpg',[
-        new Ingredient('Pizza dough',1),
-        new Ingredient('cheese',1),
-        new Ingredient('ham',1),
-        new Ingredient('tomatoes',4)
-    ]),
-    new Recipe('Souvlaki', 'Best souvlaki ever', 'https://c1.staticflickr.com/8/7203/6847157346_dab8f11302_z.jpg',[
-        new Ingredient('pita',2),
-        new Ingredient('pork chops',4),
-        new Ingredient('onion',1),
-        new Ingredient('yogurt',1),
-        new Ingredient('potatoes',4)
-    ])
+    new Recipe(
+      'Tasty Schnitzel',
+      'A super-tasty Schnitzel - just awesome!',
+      'https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG',
+      [
+        new Ingredient('Meat', 1),
+        new Ingredient('French Fries', 20)
+      ]),
+    new Recipe('Big Fat Burger',
+      'What else you need to say?',
+      'https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg',
+      [
+        new Ingredient('Buns', 2),
+        new Ingredient('Meat', 1)
+      ])
   ];
+
   constructor(private slService: ShoppingListService) {}
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   getRecipes() {
     return this.recipes.slice();
