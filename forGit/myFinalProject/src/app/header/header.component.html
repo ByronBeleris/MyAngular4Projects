@@ -1,0 +1,27 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded" ngbDropdown>
+  <button style="cursor: pointer;" class="navbar-toggler navbar-toggler-right" (click)="isNavbarCollapsed = !isNavbarCollapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a routerLink="/" class="navbar-brand" style="cursor: pointer;">myApp</a>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" [ngbCollapse]="isNavbarCollapsed">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" style="cursor: pointer;" routerLink="/posts">Posts</a>
+      </li>
+      <ng-template [ngIf]="!isAuthenticated()">
+      <li class="nav-item">
+        <a class="nav-link" style="cursor: pointer;" routerLink="/signin">Sign in</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="cursor: pointer;" routerLink="/signup">Sign up</a>
+      </li>
+      </ng-template>
+      <li class="nav-item">
+          <a class="nav-link" style="cursor: pointer;" (click)="onLogout()"
+          *ngIf="isAuthenticated()">Log out</a>
+        </li>
+    </ul>
+  </div>
+</nav>
+
